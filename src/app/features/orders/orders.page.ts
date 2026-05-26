@@ -1,0 +1,3 @@
+import { DatePipe } from '@angular/common';import { Component, inject } from '@angular/core';import { RouterLink } from '@angular/router';import { OrdersService } from '../../core/services/orders.service';
+@Component({standalone:true,imports:[RouterLink,DatePipe],template:`<h1 class="mb-4 text-2xl font-bold">История заказов</h1><section class="space-y-3">@for(o of orders.orders();track o.id){<a [routerLink]="['/orders',o.id]" class="card flex justify-between p-4"><span>№ {{o.id}}<br><small>{{o.createdAt|date:'short'}}</small></span><span class="rounded-full bg-slate-100 px-3 py-1 text-sm">{{o.status}}</span><b>{{o.total}} ₽</b></a>}@empty{<p class="text-slate-500">Заказов пока нет</p>}</section>`})
+export class OrdersPage{orders=inject(OrdersService)}

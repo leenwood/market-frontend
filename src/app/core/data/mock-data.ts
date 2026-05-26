@@ -1,0 +1,4 @@
+import { Category, Product } from '../models';
+export const categories:Category[]=[{id:'all',name:'Все'},{id:'electronics',name:'Электроника'},{id:'home',name:'Дом'},{id:'sport',name:'Спорт'},{id:'books',name:'Книги'}];
+const img=(n:number)=>`https://picsum.photos/seed/market-${n}/600/600`;
+export const products:Product[]=Array.from({length:48}).map((_,i)=>{const cats=['electronics','home','sport','books'];const brands=['North','Pixel','Urban','Lite'];return {id:String(i+1),title:`Товар ${i+1}`,brand:brands[i%brands.length],price:990+i*137,rating:3.8+(i%12)/10,reviews:12+i*3,image:img(i+1),category:cats[i%cats.length],inStock:i%7!==0,description:'MVP-описание товара: основные свойства, сценарии использования и комплектация.',attributes:{color:['black','white','blue'][i%3],storage:['64GB','128GB','256GB'][i%3]}}});
