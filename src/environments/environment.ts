@@ -1,1 +1,1 @@
-export const environment={apiUrl:'/api/v1'};
+export const environment={apiUrl:'https://marketplace.local/api/v1'};

@@ -3,3 +3,4 @@
 .qwen
 
 node_modules/
+.angular/
